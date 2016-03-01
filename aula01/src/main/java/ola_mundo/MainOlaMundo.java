@@ -4,7 +4,7 @@ public class MainOlaMundo {
 
 	public static void main(String[] args) {
 		
-		System.out.println("Olá Mundo 5!");
+		System.out.println("Olá Mundo 6!");
 
 	}
 
