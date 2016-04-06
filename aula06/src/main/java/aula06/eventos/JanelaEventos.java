@@ -56,7 +56,8 @@ public class JanelaEventos extends JFrame {
 		// this.addMouseMotionListener(new TratarMovimentoMouse());
 		// this.addMouseWheelListener(new TratarScrollMouse());
 		
-		JTextField campo = new JTextField(10);
+		JTextArea campo = new JTextArea(10,5);
+		campo.setLineWrap(true); // Quebra de linha
 		String texto = campo.getText(); // Texto do campo
 		conteudo.add(campo);
 		this.setFocusable(true);
