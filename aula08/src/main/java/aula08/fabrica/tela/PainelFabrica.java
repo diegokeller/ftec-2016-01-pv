@@ -17,8 +17,6 @@ public class PainelFabrica extends JPanel {
 		Image fabrica;
 		try {
 			File arquivo = new File("src/main/resources/fabrica.png");
-			System.out.println(arquivo.getAbsolutePath()
-					);
 			fabrica = ImageIO.read(arquivo);
 			g.drawImage(fabrica, 0, 0, null);
 		} catch (IOException e) {
