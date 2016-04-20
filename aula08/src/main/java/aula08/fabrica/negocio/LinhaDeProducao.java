@@ -11,7 +11,7 @@ public class LinhaDeProducao extends Thread {
 		while(true){
 			
 			try {
-				Thread.sleep(5000);
+				Thread.sleep(1500);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

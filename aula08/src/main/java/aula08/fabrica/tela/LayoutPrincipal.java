@@ -14,18 +14,18 @@ public class LayoutPrincipal extends JPanel {
 		setLayout(new BorderLayout());
 		
 		JPanel linhas = new JPanel();
-		PainelLinhaDeProducao linha1 = new PainelLinhaDeProducao();
+		PainelLinhaDeProducao linha1 = new PainelLinhaDeProducao(0);
 		linhas.add(linha1);
-		PainelLinhaDeProducao linha2 = new PainelLinhaDeProducao();
+		PainelLinhaDeProducao linha2 = new PainelLinhaDeProducao(1);
 		linhas.add(linha2);
-		PainelLinhaDeProducao linha3 = new PainelLinhaDeProducao();
+		PainelLinhaDeProducao linha3 = new PainelLinhaDeProducao(2);
 		linhas.add(linha3);
 		add(linhas, BorderLayout.NORTH);
 		
-		Estoque estoque = new Estoque();
+		PainelEstoque estoque = new PainelEstoque();
 		add(estoque, BorderLayout.CENTER);
 		
-		Vendas vendas = new Vendas();
+		PainelVendas vendas = new PainelVendas();
 		add(vendas, BorderLayout.SOUTH);
 	
 	}
