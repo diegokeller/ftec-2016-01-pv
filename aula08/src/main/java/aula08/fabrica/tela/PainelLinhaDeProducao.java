@@ -6,9 +6,9 @@ import java.awt.GridBagLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-public class LinhaDeProducao extends JPanel {
+public class PainelLinhaDeProducao extends JPanel {
 	
-	public LinhaDeProducao() {
+	public PainelLinhaDeProducao() {
 		
 		setLayout(new GridBagLayout());
 		

@@ -5,18 +5,20 @@ import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
+import aula08.fabrica.negocio.Fabrica;
+
 public class LayoutPrincipal extends JPanel {
 	
 	public LayoutPrincipal() {
-
+		
 		setLayout(new BorderLayout());
 		
 		JPanel linhas = new JPanel();
-		LinhaDeProducao linha1 = new LinhaDeProducao();
+		PainelLinhaDeProducao linha1 = new PainelLinhaDeProducao();
 		linhas.add(linha1);
-		LinhaDeProducao linha2 = new LinhaDeProducao();
+		PainelLinhaDeProducao linha2 = new PainelLinhaDeProducao();
 		linhas.add(linha2);
-		LinhaDeProducao linha3 = new LinhaDeProducao();
+		PainelLinhaDeProducao linha3 = new PainelLinhaDeProducao();
 		linhas.add(linha3);
 		add(linhas, BorderLayout.NORTH);
 		
