@@ -8,14 +8,13 @@ import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
-public class JanelaMarquee extends JFrame {
+public class JanelaPrincipal extends JFrame {
 
 	private int x = 400;
 	
-	public JanelaMarquee() {
-		this.setTitle("Marquee");
+	public JanelaPrincipal() {
+		this.setTitle("Sistema de Envio de NF-e");
 		this.setSize(400, 400);
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setVisible(true);
 		while(true){
 			x -= 5;
@@ -27,8 +26,6 @@ public class JanelaMarquee extends JFrame {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			
-			// Java 8 - Lambda Expressions
 			SwingUtilities.invokeLater(() -> {
 				this.repaint();
 			});
