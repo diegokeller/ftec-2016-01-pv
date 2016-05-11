@@ -4,13 +4,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
+import javax.swing.JDesktopPane;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 public class MenuDeOpcoes extends JMenuBar {
 
-	public MenuDeOpcoes() {
+	private JDesktopPane desktop;
+	
+	public MenuDeOpcoes(JDesktopPane desktop) {
+		
+		this.desktop = desktop;
 		
 		// Cria o menu arquivo
 		JMenu arquivo = new JMenu("Arquivo");
@@ -46,6 +51,19 @@ public class MenuDeOpcoes extends JMenuBar {
 		mais.add(new JMenuItem("Mais 1"));
 		mais.add(new JMenuItem("Mais 2"));
 		clientes.add(mais);
+		
+		JMenuItem arquivoNovaJanela = new JMenuItem("Nova janela");
+		arquivoNovaJanela.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				FrameInterno interno = new FrameInterno();
+				desktop.add(interno);
+				
+			}
+		});
+		arquivo.add(arquivoNovaJanela);
+		
 	}
 	
 }
