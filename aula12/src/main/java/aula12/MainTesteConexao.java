@@ -3,6 +3,7 @@ package aula12;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class MainTesteConexao {
@@ -44,6 +45,30 @@ public class MainTesteConexao {
 			ps.execute();
 			ps.close();
 
+			// Buscar um produto
+			String sqlSelect = "select * from produto where id = ?";
+			PreparedStatement psSelect = conexao.prepareStatement(sqlSelect);
+			psSelect.setInt(1, 180);
+
+			// Executa
+			ResultSet resultado = psSelect.executeQuery();
+			
+			// Verifica se tem resultados
+			if (resultado.next()) {
+				Integer idProduto = resultado.getInt("id");
+				String nome = resultado.getString("nome");
+				Float preco = resultado.getFloat("preco");
+				Boolean ativo = resultado.getBoolean("ativo");
+				System.out.println(idProduto);
+				System.out.println(nome);
+				System.out.println(preco);
+				System.out.println(ativo);
+			}
+			
+			// Fecha o comando
+			psSelect.close();
+			resultado.close();
+			
 			// Desconectar
 			conexao.close();
 			
