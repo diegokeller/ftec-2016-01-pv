@@ -2,6 +2,7 @@ package aula12;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class MainTesteConexao {
@@ -28,16 +29,28 @@ public class MainTesteConexao {
 		try {
 			conexao = DriverManager.getConnection(stringConexao, usuario,
 					senha);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
-		try {
+
+			// Insere um produto
+			String sql = "insert into produto(nome, descricao, "
+					+ "preco, quantidade_estoque, ativo) "
+					+ "values (?,?,?,?,?)";
+			PreparedStatement ps = null;
+			ps = conexao.prepareStatement(sql);
+			ps.setString(1, "Teste");
+			ps.setString(2, "Um produto qualquer");
+			ps.setFloat(3, 123.4f);
+			ps.setInt(4, 4);
+			ps.setBoolean(5, true);
+			ps.execute();
+			ps.close();
+
+			// Desconectar
 			conexao.close();
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		System.out.println("OK");
 
 	}
