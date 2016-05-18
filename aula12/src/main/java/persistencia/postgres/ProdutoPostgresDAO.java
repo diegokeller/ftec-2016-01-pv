@@ -47,13 +47,13 @@ public class ProdutoPostgresDAO implements ProdutoDAO {
 	@Override
 	public void atualizar(Produto p) {
 		// TODO: Implementar
-		throw new NotImplementedException();
+//		throw new NotImplementedException();
 	}
 
 	@Override
 	public void excluir(Integer id) {
 		// TODO: Implementar
-		throw new NotImplementedException();
+//		throw new NotImplementedException();
 	}
 
 	@Override
