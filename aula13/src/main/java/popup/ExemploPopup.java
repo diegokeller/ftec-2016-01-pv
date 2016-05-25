@@ -1,6 +1,8 @@
 package popup;
 
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -22,7 +24,15 @@ public class ExemploPopup extends JanelaModelo {
 		this.add(conteudo);
 		
 		pop = new JPopupMenu();
-		pop.add(new JMenuItem("Salvar"));
+		JMenuItem menuItem = new JMenuItem("Salvar");
+		menuItem.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("TESTE");
+			}
+		});
+		pop.add(menuItem);
 		pop.add(new JMenuItem("Sair"));
 		
 		this.addMouseListener(new PopupListener());

@@ -39,7 +39,7 @@ public class ExemploListBox extends JanelaModelo {
 		petList = new JList<String>(opcoes);
 		petList.setSelectedIndex(4);
 		petList.setVisibleRowCount(-1);
-		petList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+		petList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		petList.setLayoutOrientation(JList.HORIZONTAL_WRAP);
 		petList.addListSelectionListener(new ListSelectionListener() {
 			

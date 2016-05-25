@@ -59,6 +59,9 @@ public class ExemploTabelaSimples extends JanelaModelo {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				int i = table.getSelectedRow();
+				for (int j = 0; j < data[i].length; j++) {
+					System.out.println(data[i][j]);
+				}
 				JOptionPane.showMessageDialog(null, data[i][0]);
 			}
 		});
