@@ -26,7 +26,7 @@ public class ConnectionFactory {
 		String stringConexao = 
 				"jdbc:postgresql://localhost:5432/ftec_pedidos";
 		String usuario = "postgres";
-		String senha = "postgresX";
+		String senha = "postgres";
 
 		Connection conexao = null;
 		
