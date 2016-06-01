@@ -16,8 +16,40 @@ public class ProdutoBO {
 		dao = DAOFactory.getDAOFactory().getProdutoDAO();
 	}
 
-	public void inserir(Produto produto) {
+	public void inserir(Produto produto) throws NegocioException {
 
+		if(produto == null){
+			throw new NegocioException("Produto não informado.");
+		}
+		
+		// Quantidade em estoque não pode ser negativa
+		if(produto.getQuantidadeEstoque() < 0){
+			throw new NegocioException("Quantidade em estoque não pode ser negativa.");
+		}
+		
+		// Preço deve ser maior do que zero
+		if(produto.getPreco() <= 0){
+			throw new NegocioException("Preço deve ser maior que zero.");
+		}
+		
+		// Ativo e nome são obrigatórios
+		if(produto.getNome() == null || 
+				produto.getNome().isEmpty() || 
+				produto.getAtivo() == null){
+			throw new NegocioException("Campos de nome e ativo são obrigatórios.");
+		}
+		
+		if(produto.getNome().length() > 100){
+			throw new NegocioException("Campo de nome deve ter no máximo 100 caracteres.");
+		}
+		
+		try {
+			dao.inserir(produto);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new NegocioException("Erro de acesso ao banco.", e);
+		}
+		
 	}
 
 	public Produto buscarPorId(Integer id) throws NegocioException {
