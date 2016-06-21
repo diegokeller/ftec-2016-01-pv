@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<pedidos>
+    <pedido>
+        <data>2016-06-21T20:19:16.699-03:00</data>
+        <itens>
+            <item>
+                <produto>
+                    <nome>Abacaxi</nome>
+                    <preco>1.23</preco>
+                </produto>
+                <quantidade>5</quantidade>
+            </item>
+            <item>
+                <produto>
+                    <nome>Banana</nome>
+                    <preco>2.46</preco>
+                </produto>
+                <quantidade>7</quantidade>
+            </item>
+        </itens>
+    </pedido>
+    <pedido>
+        <data>2016-06-21T20:19:16.699-03:00</data>
+        <itens>
+            <item>
+                <produto>
+                    <nome>Abacaxi</nome>
+                    <preco>1.23</preco>
+                </produto>
+                <quantidade>5</quantidade>
+            </item>
+            <item>
+                <produto>
+                    <nome>Banana</nome>
+                    <preco>2.46</preco>
+                </produto>
+                <quantidade>7</quantidade>
+            </item>
+        </itens>
+    </pedido>
+</pedidos>
